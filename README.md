@@ -9,4 +9,4 @@ Note: For running the shell script files, compile, run or stop , the CATALINA_HO
 
 # This application is basically to facilitate development of javaweb app in mobile environment, particularly inside a linux distro in termux
 
-To know more on installing linux distro in termux in android , please download the termux and AnLinux apps from pay store.
+To know more on installing linux distro in termux in android , please download the termux and AnLinux apps from play store.
