@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+*{
+font-size:10px;
+}
+input,button{
+width:90px;
+height:30px;
+}
+table{
+background-color:cyan;
+}
+</style>
+</head>
+<body>
+<table id="main">
+<tr><td colspan="2"><p v-once>{{title}}</p></td></tr>
+<tr><td><p>{{title}}</p></td><td><input type="text" v-on:input="changeTitle"></td></tr>
+<tr><td><input type="text" v-model="title"></td><td><input type="text" v-on:keyup.space="alrrt" v-model="title"></td></tr>
+<tr><td><button v-on:click="clear">Clear</button></td><td><button v-on:click="save">Save</button></td></tr>
+</table>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+var v = new Vue({
+  el:'#main',
+  data:{
+    title:"Hellow World"
+  },
+  methods:{
+    changeTitle: function(event){
+      this.title = event.target.value;
+    },
+	clear:function(){
+	  this.title="cleared...";
+	},
+	save:function(){
+	  this.title="saved....";
+	},
+	alrrt:function(){
+	  alert("space not allowed!!");
+	}
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+#!/bin/sh
+LIBSDIR="${CATALINA_HOME}/lib"
+FILES="${LIBSDIR}/*"
+CP=""
+for f in $FILES
+do
+  CP=${CP}:$f
+  #echo "Processing $f file..."
+done
+echo
+echo
+rm -r ../webapp/WEB_INF/classes/com
+echo javac -d ../webapp/WEB_INF/classes -cp "."$CP com/devashish/*.java
+javac -d ../webapp/WEB-INF/classes -cp "."$CP com/devashish/*.java
+rm -r ../../../WEB-INF
+cp -r ../webapp/* ../../..
+echo Inner class files for maven:
+ls -l ../webapp/WEB-INF/classes/com/devashish
+echo outer class files for direct running:
+ls -l ../../../WEB-INF/classes/com/devashish
+echo Home Directory:
+ls -l ../../..
